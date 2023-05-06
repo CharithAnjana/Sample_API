@@ -20,7 +20,6 @@ namespace SampleAPI.Controllers
         }
 
 
-
         [HttpPost]
         [Route("api/v1/createCustomer")]
         public HttpResponseMessage createCustomer([FromBody] Customer customer)
@@ -52,14 +51,14 @@ namespace SampleAPI.Controllers
                 HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.BadRequest);
                 return response;
             }
-
         }
+
 
         [HttpGet]
         [Route("api/v1/getAllCustomers")]
         public List<Customer> getAllCustomers()
         {
-            List<Customer> customers = new List<Customer>();
+            List<Customer> customerList = new List<Customer>();
             using (SqlConnection con = new SqlConnection(_configuration.GetConnectionString("dbConString")))
             {
                 SqlCommand cmd = new SqlCommand("SELECT * FROM Customer;", con);
@@ -77,12 +76,13 @@ namespace SampleAPI.Controllers
                         customer.CreatedOn = DateTime.Parse(reader["CreatedOn"].ToString());
                         customer.IsActive = Convert.ToInt32(reader["IsActive"]);
 
-                        customers.Add(customer);
+                        customerList.Add(customer);
                     }
                 }
             }
-            return customers;
+            return customerList;
         }
+
 
         [HttpPut]
         [Route("api/v1/updateCustomer")]
@@ -145,6 +145,7 @@ namespace SampleAPI.Controllers
                 return response;
             }
         }
+
 
     }
 }
