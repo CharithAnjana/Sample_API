@@ -1,9 +1,12 @@
-﻿namespace SampleAPI.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SampleAPI.Models
 {
     public class Product
     {
         public Guid ProductId { get; set; }
 
+        [StringLength(50)]
         public string ProductName { get; set; }
 
         public decimal UnitPrice { get; set; }
