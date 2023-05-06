@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "16c5cf1c-2183-40ec-a9ad-04e5d9dc1b2c",
+		"name": "SampleAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "getAllCustomers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5160/api/v1/getAllCustomers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5160",
+							"path": [
+								"api",
+								"v1",
+								"getAllCustomers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"test\",\r\n  \"email\": \"test@gmail.com\",\r\n  \"firstName\": \"fname\",\r\n  \"lastName\": \"lname\",\r\n  \"createdOn\": \"2023-05-06T09:14:21.276Z\",\r\n  \"isActive\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5160/api/v1/createCustomer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5160",
+							"path": [
+								"api",
+								"v1",
+								"createCustomer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"F0A81CA9-D06A-4C52-A70A-133140A512C1\",\r\n  \"username\": \"testupdate\",\r\n  \"email\": \"testupdate@gmail.com\",\r\n  \"firstName\": \"fnameup\",\r\n  \"lastName\": \"lnameup\",\r\n  \"createdOn\": \"2023-05-05T09:14:21.276Z\",\r\n  \"isActive\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5160/api/v1/updateCustomer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5160",
+							"path": [
+								"api",
+								"v1",
+								"updateCustomer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"C154D417-57D3-4B56-BE86-F5D3985D908F\",\r\n  \"username\": \"testupdate\",\r\n  \"email\": \"testupdate@gmail.com\",\r\n  \"firstName\": \"fnameup\",\r\n  \"lastName\": \"lnameup\",\r\n  \"createdOn\": \"2023-05-05T09:14:21.276Z\",\r\n  \"isActive\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5160/api/v1/deleteCustomer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5160",
+							"path": [
+								"api",
+								"v1",
+								"deleteCustomer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "getActiveOrdersByCustomer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5160/api/v1/getActiveOrdersByCustomer/CEE43D8F-2EEF-4E09-84E9-8A9A15DC3C8E",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5160",
+							"path": [
+								"api",
+								"v1",
+								"getActiveOrdersByCustomer",
+								"CEE43D8F-2EEF-4E09-84E9-8A9A15DC3C8E"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
